@@ -1,0 +1,80 @@
+---
+title: "data Import
+output: github_document
+---
+
+## Data import: CSVs
+
+Let's import data using the 'readr' Package.
+
+```{r, echo = FALSE}
+library(tidyverse)
+library(readxl)
+library(haven)
+```
+
+
+``` {r}
+litters_df = read_csv("./data/FAS_litters.csv")
+litters_df = janitor::clean_names(litters_df)
+```
+
+```{r}
+litters_df
+head(litters_df)
+```
+
+```{r}
+litters_df
+
+head(litters_df)
+tail(litters_df)
+```
+
+```{r}
+view(litters_df)
+```
+
+
+```{r}
+skimr::skim(litters_df)
+```
+
+`read_csv` options ..
+
+```{r, eval=FALSE}
+read_csv("data/FAS_litters.csv")
+```
+
+## other file formats
+
+We need to read in an excel spread sheet ...
+
+```{r}
+mlb_df = read_excel("data/mlb11.xlsx")
+```
+
+```{r}
+lotrd_words_df = read_excel(
+    
+)
+```
+
+## Still more formats
+
+
+```{r}
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+view(pulse_df)
+```
+
+## Data esport
+
+```{r}
+write_csv(lotrd_words_df, file="data/LotR_Words.xlsx")
+```
+
+
+
+
+
