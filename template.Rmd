@@ -75,6 +75,10 @@ write_csv(lotrd_words_df, file="data/LotR_Words.xlsx")
 ```
 
 
+## Why not base r???
 
+```{r}
+dont_do_this_df = read.csv("data/FAS_litters.csv")
+```
 
 
