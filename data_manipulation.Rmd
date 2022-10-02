@@ -1,14 +1,20 @@
 ---
 title: "data_manipulation with 'dyplr'"
-output: html_document
+output: github_document
 date: "2022-09-22"
 ---
+
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(haven)
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
     collapse = TRUE,
     echo = TRUE)
-library(tidyverse)
 
 options(tibble.print_min = 3)
 
@@ -81,6 +87,24 @@ litters_data
 ```{r}
 litters_data %>%
   lm(wt_gain ~ pups_born_alive, data = .)
+```
+
+```{r}
+skimr::skim(litters_data)
+```
+
+## Other data file formats
+
+Read in an excel file 
+
+```{r}
+mlb_df = read_excel("./data/mlb11.xlsx")
+```
+
+
+Read in a SAS file
+```{r}
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
 ```
 
 
